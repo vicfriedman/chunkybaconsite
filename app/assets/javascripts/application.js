@@ -12,4 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require_tree .
+
+
+//add's tooltip to word 'bacon' anywhere on site
+$('document').ready(function(){
+
+var search = $('body').html();
+search = search.replace(/bacon|Bacon|BACON/g, function($1){
+  return('<a href="#" rel="tooltip" data-toggle="tooltip" title="September 3 is International Bacon Day">' + $1 +'<a>');
+
+});
+
+$('body').html(search)
+$("a[rel=tooltip]").tooltip()
+});
+
+
