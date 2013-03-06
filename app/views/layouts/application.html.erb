@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChunkyBaconCorp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <header>
+    <div class='logo'>
+      <%= link_to "ChunkyBaconCorp!", root_path %>
+    </div>
+    <ul id='nav'>
+      <li>
+        <%= link_to 'Orders', orders_path %>
+      </li>
+      </li>
+      <li>
+        <%= link_to '+ New Order', new_order_path %>
+      </li>
+    </ul>
+  </header>
+
+  <div id='content'>
+    <%= yield %>
+  </div>
+
+  <footer>
+    <ul>
+      <li>
+        Copyright <%= Time.now.year %> ChunkyBaconCorp
+      </li>
+      <li>
+        <%= link_to "Twitter", "http://twitter.com/chunkybaconcorp" %>
+      </li>
+    </ul>
+  </footer>
+
+
+</body>
+</html>
